@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 
 import Register from "./pages/Register"
-import './style.scss'
+
 
 function App() {
 
