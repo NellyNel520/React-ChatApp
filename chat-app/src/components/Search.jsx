@@ -1,19 +1,74 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
+import {
+	collection,
+	query,
+	where,
+	getDocs,
+	setDoc,
+	doc,
+	updateDoc,
+	serverTimestamp,
+	getDoc,
+} from 'firebase/firestore'
+import { db } from '../firebase'
+import { AuthContext } from '../context/AuthContext'
 
 const Search = () => {
-  return (
-    <div className='search'>
-      <div className='searchForm'>
-        <input type="text" placeholder='Find a user'/>
-      </div>
-      <div className='userChat'>
-        <img src="https://images.unsplash.com/photo-1691349202760-b139b5238a76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="baby" />
-        <div className='userChatInfo'>
-          <span>Jane Doe</span>
-        </div>
-      </div>
-    </div>
-  )
+	const [username, setUsername] = useState("")
+	const [user, setUser] = useState(null)
+	const [err, setErr] = useState(false)
+
+	const { currentUser } = useContext(AuthContext)
+
+	const handleSearch = async () => {
+		const q = query(
+			collection(db, 'users'),
+			where('displayName', '==', username)
+		)
+
+		try {
+			const querySnapshot = await getDocs(q)
+			querySnapshot.forEach((doc) => {
+				setUser(doc.data())
+			})
+		} catch (err) {
+			setErr(true)
+		}
+	}
+
+  const handleSelect = () => {
+    // Check whether the group (chats in firestore) exists, if not create 
+
+    // create user chats with message details 
+  }
+
+	const handleKey = (e) => {
+		e.code === 'Enter' && handleSearch()
+	}
+	return (
+		<div className="search">
+			<div className="searchForm">
+				<input
+					type="text"
+					placeholder="Find a user"
+					onKeyDown={handleKey}
+					onChange={(e) => setUsername(e.target.value)}
+					value={username}
+				/>
+			</div>
+			{err && <span>User not found!</span>}
+			{user && (
+				<div className="userChat" 
+        onClick={handleSelect}
+        >
+					<img src={user.photoURL} alt="" />
+					<div className="userChatInfo">
+						<span>{user.displayName}</span>
+					</div>
+				</div>
+			)}
+		</div>
+	)
 }
 
 export default Search
