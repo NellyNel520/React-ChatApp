@@ -54,7 +54,7 @@ const Search = () => {
         //create a chat in chats collection
         await setDoc(doc(db, "chats", combinedId), { messages: [] });
 
-        //create user chats
+        //create user chats for both users in the chat
         await updateDoc(doc(db, "userChats", currentUser.uid), {
           [combinedId + ".userInfo"]: {
             uid: user.uid,
@@ -73,12 +73,14 @@ const Search = () => {
           [combinedId + ".date"]: serverTimestamp(),
         });
       }
-    } catch (err) {}
+    } catch (err) {
+      setErr(err)
+    }
 
     setUser(null);
     setUsername("")
   };
-  // create user chats with message details
+  
 	return (
 		<div className="search">
 			<div className="searchForm">
