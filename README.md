@@ -43,6 +43,8 @@ The project itself was deployed and can be viewed [here](https://chatterbox-6mu9
 ![Screenshot 2023-08-16 at 8 42 42 PM](https://github.com/NellyNel520/React-ChatApp/assets/117863144/c54ef187-5e20-4da0-88ce-7ac276ddc354)
 ##### Home Screen
 ![Screenshot 2023-08-16 at 8 43 16 PM](https://github.com/NellyNel520/React-ChatApp/assets/117863144/dd8eee47-d53e-4a04-b520-105e1f6a8b6c)
+![Screenshot 2023-08-16 at 8 58 43 PM](https://github.com/NellyNel520/React-ChatApp/assets/117863144/86daad97-3fe6-4b9c-8503-853efb46bbee)
+
 
 
 
