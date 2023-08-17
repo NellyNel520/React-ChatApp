@@ -8,7 +8,8 @@
 
 #### ***Description***
 ###### A breif description
-The ChatterBox application is a modern and user-friendly chat platform developed using React, leveraging the power of Firebase services to provide a seamless experience. This application incorporates several key features.
+The ChatterBox application is a modern and user-friendly chat platform developed using React, leveraging the power of Firebase services to provide a seamless experience. This application incorporates User Authentication with Firebase, creates a real-time Chat Interface, firebase image upload & storage, fireStore database and route protection.
+[Deployed App](https://chatterbox-6mu9.onrender.com/login) 
 ***
 
 #### ***Technologies Used*** 
