@@ -37,9 +37,11 @@ The project itself was deployed and can be viewed [here](https://chatterbox-6mu9
 
 ***
 ### ***Screenshots***
-##### Image Header 1
+##### Register Screen
 ![Screenshot 2023-08-16 at 8 42 49 PM](https://github.com/NellyNel520/React-ChatApp/assets/117863144/1d3e7628-aab8-40c5-9ad3-a23a322f49ba)
+##### Login Screen
 ![Screenshot 2023-08-16 at 8 42 42 PM](https://github.com/NellyNel520/React-ChatApp/assets/117863144/c54ef187-5e20-4da0-88ce-7ac276ddc354)
+##### Home Screen
 ![Screenshot 2023-08-16 at 8 43 16 PM](https://github.com/NellyNel520/React-ChatApp/assets/117863144/dd8eee47-d53e-4a04-b520-105e1f6a8b6c)
 
 
